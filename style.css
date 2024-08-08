@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 h3 {
@@ -36,14 +37,20 @@ input[type="text"] {
 
 #results {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
 }
 
 .result {
   border: 2px black solid;
   border-radius: 10px;
   padding: 0.5rem;
+  background-color: #ffffff;
 }
 
 img {
@@ -58,4 +65,10 @@ button {
   border-radius: 5px;
   font-size: 1rem;
   margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 2rem;
+  }
 }

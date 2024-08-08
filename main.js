@@ -33,13 +33,15 @@ searchInput.addEventListener("keyup", () => {
 });
 
 function removeElements() {
-  document.querySelectorAll(".result").forEach((prod) => prod.remove());
+  resultsRootElement.innerHTML = "";
+  // document.querySelectorAll(".result").forEach((prod) => prod.remove());
 }
 
 function renderProducts(products) {
-  results.forEach((prod) => {
-    prod.remove();
-  });
+  removeElements()
+  // results.forEach((prod) => {
+  //   prod.remove();
+  // });
   products.forEach((product) => {
     renderSingleProduct(product);
   });
